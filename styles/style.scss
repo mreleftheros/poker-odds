@@ -1,6 +1,14 @@
 @import "defaults";
 
+.welcome.move {
+  transform: translate(-1000rem, 0);
+  opacity: 0;
+}
+
 .welcome {
+  transition: 
+    transform 3s ease-in-out,
+    opacity 3s ease;
   color: #fff;
   padding: 1rem;
   display: flex;
