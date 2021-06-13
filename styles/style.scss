@@ -1,2 +1,39 @@
 @import "defaults";
 
+.welcome {
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 20rem;
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+
+    span {
+      display: block;
+      font-size: 4rem;
+      text-shadow: 1px 1px 3px #000;
+    }
+  }
+
+  &__btn {
+    color: #fff;
+    border: none;
+    padding: 1.5rem 2.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    background: rgb(0, 138, 34);
+    text-shadow: 1px 1px 3px #000;
+    border: transparent solid;
+
+    &:hover {
+      background: rgba(0, 138, 34, .8);
+      border: #fff solid;
+    }
+  }
+}
