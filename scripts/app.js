@@ -1,5 +1,7 @@
 const welcome = document.getElementById("welcome");
+const poker = document.getElementById("poker");
 const startBtn = document.getElementById("startBtn");
+const endBtn = document.getElementById("endBtn");
 
 // function to make welcome screen disappear
 const closeWelcome = () => {
@@ -11,10 +13,10 @@ const closeWelcome = () => {
   });
 };
 
-// function to initialiaze game UI
+// function to initialiaze UI
 const init = () => {
-  
+
 };
 
 // events
-startBtn.addEventListener("click", closeWelcome);
+// startBtn.addEventListener("click", closeWelcome);
