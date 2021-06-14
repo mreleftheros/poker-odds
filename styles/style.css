@@ -190,6 +190,14 @@ body {
   background: rgba(255, 255, 255, 0.5);
   color: #ff0a0a;
 }
+.poker__card__options__option.check.checked {
+  background: lime;
+  color: #fff;
+}
+.poker__card__options__option.ban.checked {
+  background: #ff0a0a;
+  color: #fff;
+}
 .poker__card__options__option {
   border-radius: 1rem;
   padding: 0.2rem 1rem;

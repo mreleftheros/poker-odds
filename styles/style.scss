@@ -192,6 +192,16 @@
         background: rgba(255, 255, 255, .5);
         color: rgb(255, 10, 10);
       }
+
+      &__option.check.checked {
+        background: rgb(0, 255, 0);
+        color: #fff;
+      }
+
+      &__option.ban.checked {
+        background: rgb(255, 10, 10);
+        color: #fff;
+      }
       
       &__option {
         border-radius: 1rem;
