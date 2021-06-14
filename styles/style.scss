@@ -155,12 +155,15 @@
 
     &__reset {
       position: absolute;
-      top: -2.5rem;
-      left: 50%;
+      top: -.5rem;
+      left: 95%;
       transform: translateX(-50%);
       font-size: 1.5rem;
       cursor: pointer;
-      color: rgb(223, 58, 91);
+      color: rgba(255, 255, 255, .5);
+      padding: .2rem .2rem;
+      background: rgb(223, 58, 91);
+      border-radius: 1rem;
     }
 
     &__icon.player1 {

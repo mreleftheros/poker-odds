@@ -157,12 +157,15 @@ body {
 }
 .poker__card__reset {
   position: absolute;
-  top: -2.5rem;
-  left: 50%;
+  top: -0.5rem;
+  left: 95%;
   transform: translateX(-50%);
   font-size: 1.5rem;
   cursor: pointer;
-  color: #df3a5b;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.2rem 0.2rem;
+  background: #df3a5b;
+  border-radius: 1rem;
 }
 .poker__card__icon.player1 {
   font-size: 5rem;
