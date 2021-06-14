@@ -3,6 +3,7 @@ const poker = document.getElementById("poker");
 const startBtn = document.getElementById("startBtn");
 const endBtn = document.getElementById("endBtn");
 const endMessage = document.getElementById("endMessage");
+let scoreBoards = document.getElementsByClassName("score");
 const players = [];
 
 // create Player class
@@ -72,7 +73,15 @@ const updateEndMessage = value => {
 
 // function to update all players scores
 const updateScores = () => {
+  let scores = [];
 
+  for(let i = 0, n = players.length; i < n; i++) {
+    scores.push(players[i].callScore);
+    scores.push(players[i].raiseScore);
+
+  }
+  // update html with each score
+  scores.forEach(score => updateScoreUI(score));
 };
 
 // function to update player at round end
@@ -103,6 +112,7 @@ const endRound = () => {
 
   if(allChecked) {
     updatePlayers();
+    updateScores();
     resetInputs();
     updateEndMessage(true);
   }
