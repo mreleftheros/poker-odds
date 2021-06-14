@@ -4,15 +4,15 @@ const startBtn = document.getElementById("startBtn");
 const endBtn = document.getElementById("endBtn");
 const endMessage = document.getElementById("endMessage");
 const players = [];
-let totalRounds = 0;
 
 // create Player class
 class Player {
   constructor() {
     this.call = null;
-    this.callScore = 0;
     this.raise = null;
+    this.callScore = 0;
     this.raiseScore = 0;
+    this.round = 0;
   }
 
   updateCallScore() {
@@ -70,20 +70,48 @@ const updateEndMessage = value => {
   }
 };
 
+// function to update all players scores
+const updateScores = () => {
+
+};
+
 // function to end current round
 const endRound = () => {
   let allChecked = checkAllValues(); // returns true or false
 
   if(allChecked) {
-    totalRounds++;
+    updatePlayers();
     updateEndMessage(true);
   }
   else {
     updateEndMessage(false);
   }
+};
 
+// function to check user click
+const updateClick = e => {
+  let player = e.target.parentElement.parentElement;
+  let playerIndex = (+player.classList[1].substr(-1)) - 2;
+  
+  if(e.target.classList.contains("call-check")) {
+    e.target.classList.toggle("checked");
+    players[playerIndex].call = true;
+  }
+  else if(e.target.classList.contains("call-ban")) {
+    e.target.classList.toggle("checked");
+    players[playerIndex].call = false;
+  }
+  else if(e.target.classList.contains("raise-check")) {
+    e.target.classList.toggle("checked");
+    players[playerIndex].raise = true;
+  }
+  else if(e.target.classList.contains("raise-ban")) {
+    e.target.classList.toggle("checked");
+    players[playerIndex].raise = false;
+  }
 };
 
 // event listeners
 // startBtn.addEventListener("click", closeWelcome);
 endBtn.addEventListener("click", endRound);
+poker.addEventListener("click", updateClick);
