@@ -193,6 +193,10 @@
       padding: .2rem .2rem;
       background: rgb(223, 58, 91);
       border-radius: 1rem;
+
+      i {
+        pointer-events: none;
+      }
     }
 
     &__icon.player1 {

@@ -184,14 +184,17 @@ const handleInputClick = e => {
 
 // function to reset player
 const handleResetClick = e => {
-  let player = e.target.parentElement.parentElement;
+  let player = e.target.parentElement;
   let playerIndex = (+player.classList[1].substr(-1)) - 1;
 
-  players[playerIndex].call = null;
-  players[playerIndex].raise = null;
-  players[playerIndex].callScore = 0;
-  players[playerIndex].raiseScore = 0;
-  players[playerIndex].rounds = 0;
+  // players[playerIndex].call = null;
+  // players[playerIndex].raise = null;
+  // players[playerIndex].callScore = 0;
+  // players[playerIndex].raiseScore = 0;
+  // players[playerIndex].rounds = 0;
+
+  scoreBoards[(playerIndex * 2)].textContent = 0;
+  scoreBoards[(playerIndex * 2 + 1)].textContent = 0;
 };
 
 // function to check click

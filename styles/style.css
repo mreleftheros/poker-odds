@@ -191,6 +191,9 @@ body {
   background: #df3a5b;
   border-radius: 1rem;
 }
+.poker__card__reset i {
+  pointer-events: none;
+}
 .poker__card__icon.player1 {
   font-size: 5rem;
 }
