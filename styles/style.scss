@@ -1,14 +1,14 @@
 @import "defaults";
 
 .welcome.move {
-  transform: translate(-1000rem, 0);
+  transform: translate(-100rem, 0);
   opacity: 0;
 }
 
 .welcome {
   transition: 
-    transform 3s ease-in-out,
-    opacity 3s ease;
+    transform 2s ease-in-out,
+    opacity 2s ease;
   color: #fff;
   padding: 1rem;
   display: flex;
@@ -46,7 +46,15 @@
   }
 }
 
+.poker.move {
+  display: none;
+  opacity: 0;
+  transition: opacity 3s ease;
+}
+
 .poker {
+  opacity: 1;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;

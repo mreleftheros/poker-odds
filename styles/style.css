@@ -21,12 +21,12 @@ body {
 }
 
 .welcome.move {
-  transform: translate(-1000rem, 0);
+  transform: translate(-100rem, 0);
   opacity: 0;
 }
 
 .welcome {
-  transition: transform 3s ease-in-out, opacity 3s ease;
+  transition: transform 2s ease-in-out, opacity 2s ease;
   color: #fff;
   padding: 1rem;
   display: flex;
@@ -60,7 +60,15 @@ body {
   border: #fff solid;
 }
 
+.poker.move {
+  display: none;
+  opacity: 0;
+  transition: opacity 3s ease;
+}
+
 .poker {
+  opacity: 1;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;

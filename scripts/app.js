@@ -43,9 +43,10 @@ for(let i = 0; i < 9; i++) {
 // function to make welcome screen disappear
 const closeWelcome = () => {
   welcome.classList.add("move");
-
+  
   welcome.addEventListener("transitionend", e => {
     e.target.style.display = "none";
+    poker.classList.remove("move");
   });
 };
 
@@ -206,6 +207,6 @@ const checkClick = e => {
 }
 
 // event listeners
-// startBtn.addEventListener("click", closeWelcome);
+startBtn.addEventListener("click", closeWelcome);
 endBtn.addEventListener("click", endRound);
 poker.addEventListener("click", checkClick);
