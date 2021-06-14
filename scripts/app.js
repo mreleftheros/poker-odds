@@ -82,7 +82,7 @@ const updateEndMessage = value => {
 // function to update score UI
 const updateScoreUI = (score, index) => {
   let scorePercent = score * 100;
-  scoreBoards[index].textContent = `${scorePercent}%`;
+  scoreBoards[index].textContent = `${scorePercent.toFixed(2)}%`;
 };
 
 // function to update all players scores
