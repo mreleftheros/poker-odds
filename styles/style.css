@@ -69,12 +69,18 @@ body {
   width: 100%;
   height: 100%;
 }
-.poker__btn {
+.poker__end {
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.poker__end__btn {
   color: #fff;
   border: none;
   padding: 1.5rem 2.5rem;
@@ -85,9 +91,27 @@ body {
   text-shadow: 1px 1px 3px #000;
   border: transparent solid;
 }
-.poker__btn:hover {
+.poker__end__btn:hover {
   background: rgba(0, 138, 34, 0.8);
   border: #fff solid;
+}
+.poker__end__message.success {
+  color: lime;
+  opacity: 1;
+}
+.poker__end__message.error {
+  color: #df3a5b;
+  opacity: 1;
+}
+.poker__end__message {
+  opacity: 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  margin-top: 0.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #000;
 }
 .poker__player1 {
   bottom: 0;
