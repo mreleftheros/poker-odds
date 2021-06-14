@@ -8,7 +8,9 @@ const players = [];
 class Player {
   constructor() {
     this.call = null;
+    this.callScore = 0;
     this.raise = null;
+    this.raiseScore = 0;
   }
 }
 
@@ -30,7 +32,13 @@ const closeWelcome = () => {
 
 // function to end current round
 const endRound = () => {
-
+  let allChecked = true;
+  for(let i = 0, n = players.length; i < n; i++) {
+    if(players[i].call === null || players[i] === null) {
+      allChecked = false;
+      break;
+    }
+  }
 };
 
 // event listeners
