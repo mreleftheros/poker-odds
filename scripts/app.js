@@ -94,24 +94,54 @@ const updateClick = e => {
   let playerIndex = (+player.classList[1].substr(-1)) - 2;
   
   if(e.target.classList.contains("call-check")) {
+    //remove checked class from oposite input
+    let oppositeInput = e.target.parentElement.children[1];
+    if(oppositeInput.classList.contains("checked")) {
+      oppositeInput.classList.remove("checked");
+    }
+
     e.target.classList.toggle("checked");
     players[playerIndex].call = true;
   }
   else if(e.target.classList.contains("call-ban")) {
+    //remove checked class from oposite input
+    let oppositeInput = e.target.parentElement.children[0];
+    if(oppositeInput.classList.contains("checked")) {
+      oppositeInput.classList.remove("checked");
+    }
+    
     e.target.classList.toggle("checked");
     players[playerIndex].call = false;
   }
   else if(e.target.classList.contains("raise-check")) {
+    //remove checked class from oposite input
+    let oppositeInput = e.target.parentElement.children[1];
+    if(oppositeInput.classList.contains("checked")) {
+      oppositeInput.classList.remove("checked");
+    }
+    
     e.target.classList.toggle("checked");
     players[playerIndex].raise = true;
   }
   else if(e.target.classList.contains("raise-ban")) {
+    //remove checked class from oposite input
+    let oppositeInput = e.target.parentElement.children[0];
+    if(oppositeInput.classList.contains("checked")) {
+      oppositeInput.classList.remove("checked");
+    }
+    
     e.target.classList.toggle("checked");
     players[playerIndex].raise = false;
   }
 };
 
+// function to check click
+const checkClick = e => {
+  if(e.target.classList.contains("input")) 
+    handleClick(e);
+}
+
 // event listeners
 // startBtn.addEventListener("click", closeWelcome);
 endBtn.addEventListener("click", endRound);
-poker.addEventListener("click", updateClick);
+poker.addEventListener("click", checkClick);
