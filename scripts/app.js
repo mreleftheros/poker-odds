@@ -23,6 +23,14 @@ class Player {
   updateRaiseScore() {
     if(this.raise) return this.raiseScore++;
   }
+
+  calculateCallScore() {
+    return this.callScore / this.rounds;
+  }
+
+  calculateRaiseScore() {
+    return this.raiseScore / this.rounds;
+  }
 }
 
 // create players and push them to players array
@@ -71,6 +79,12 @@ const updateEndMessage = value => {
   }
 };
 
+// function to update score UI
+const updateScoreUI = (score, index) => {
+  let scorePercent = score / players[index].rounds * 100;
+  scoreBoards[index].textContent = `${scorePercent}%`;
+};
+
 // function to update all players scores
 const updateScores = () => {
   let scores = [];
@@ -78,18 +92,19 @@ const updateScores = () => {
   for(let i = 0, n = players.length; i < n; i++) {
     scores.push(players[i].callScore);
     scores.push(players[i].raiseScore);
-
   }
+
   // update html with each score
-  scores.forEach(score => updateScoreUI(score));
+  scores.forEach((score, index) => updateScoreUI(score, index));
 };
 
 // function to update player at round end
 const updatePlayers = () => {
   players.forEach(player => {
+    player.rounds++;
     player.updateCallScore();
     player.updateRaiseScore();
-    player.rounds++;
+    updateScores();
 
     // reset to null
     player.call = null;
@@ -112,7 +127,6 @@ const endRound = () => {
 
   if(allChecked) {
     updatePlayers();
-    updateScores();
     resetInputs();
     updateEndMessage(true);
   }
@@ -166,8 +180,6 @@ const handleClick = e => {
     e.target.classList.add("checked");
     players[playerIndex].raise = false;
   }
-
-  console.log(players[playerIndex])
 };
 
 // function to check click
