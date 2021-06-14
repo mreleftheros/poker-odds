@@ -12,7 +12,7 @@ class Player {
     this.raise = null;
     this.callScore = 0;
     this.raiseScore = 0;
-    this.round = 0;
+    this.rounds = 0;
   }
 
   updateCallScore() {
@@ -75,6 +75,15 @@ const updateScores = () => {
 
 };
 
+// function to update player at round end
+const updatePlayers = () => {
+  players.forEach(player => {
+    player.updateCallScore();
+    player.updateRaiseScore();
+    player.rounds++;
+  })
+};
+
 // function to end current round
 const endRound = () => {
   let allChecked = checkAllValues(); // returns true or false
@@ -91,7 +100,7 @@ const endRound = () => {
 // function to check user click
 const handleClick = e => {
   let player = e.target.parentElement.parentElement;
-  let playerIndex = (+player.classList[1].substr(-1)) - 2;
+  let playerIndex = (+player.classList[1].substr(-1)) - 1;
   
   if(e.target.classList.contains("call-check")) {
     //remove checked class from oposite input

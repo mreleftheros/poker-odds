@@ -113,7 +113,7 @@ body {
   font-weight: bold;
   text-shadow: 1px 1px 0px #000;
 }
-.poker__player1 {
+.poker__player {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -121,47 +121,47 @@ body {
   justify-content: center;
   align-items: center;
 }
-.poker__player2 {
+.poker__player1 {
   top: 80%;
   left: 30%;
   transform: translate(-50%, -50%);
 }
-.poker__player3 {
+.poker__player2 {
   top: 60%;
   left: 10%;
   transform: translate(-50%);
 }
-.poker__player4 {
+.poker__player3 {
   top: 40%;
   left: 10%;
   transform: translate(-50%, -50%);
 }
-.poker__player5 {
+.poker__player4 {
   top: 20%;
   left: 30%;
   transform: translate(-50%, -50%);
 }
-.poker__player6 {
+.poker__player5 {
   top: 0;
   left: 50%;
   transform: translate(-50%);
 }
-.poker__player7 {
+.poker__player6 {
   top: 20%;
   left: 70%;
   transform: translate(-50%, -50%);
 }
-.poker__player8 {
+.poker__player7 {
   top: 40%;
   left: 90%;
   transform: translate(-50%, -50%);
 }
-.poker__player9 {
+.poker__player8 {
   top: 60%;
   left: 90%;
   transform: translate(-50%);
 }
-.poker__player10 {
+.poker__player9 {
   top: 80%;
   left: 70%;
   transform: translate(-50%, -50%);
