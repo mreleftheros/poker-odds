@@ -81,7 +81,20 @@ const updatePlayers = () => {
     player.updateCallScore();
     player.updateRaiseScore();
     player.rounds++;
+
+    // reset to null
+    player.call = null;
+    player.raise = null;
   })
+};
+
+// function to reset inputs
+const resetInputs = () => {
+  const inputs = document.getElementsByClassName("input");
+
+  for(let input of inputs) {
+    input.classList.remove("checked");
+  }
 };
 
 // function to end current round
@@ -90,6 +103,7 @@ const endRound = () => {
 
   if(allChecked) {
     updatePlayers();
+    resetInputs();
     updateEndMessage(true);
   }
   else {
