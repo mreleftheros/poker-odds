@@ -81,7 +81,7 @@ const updateEndMessage = value => {
 
 // function to update score UI
 const updateScoreUI = (score, index) => {
-  let scorePercent = score / players[index].rounds * 100;
+  let scorePercent = score * 100;
   scoreBoards[index].textContent = `${scorePercent}%`;
 };
 
@@ -90,8 +90,8 @@ const updateScores = () => {
   let scores = [];
 
   for(let i = 0, n = players.length; i < n; i++) {
-    scores.push(players[i].callScore);
-    scores.push(players[i].raiseScore);
+    scores.push(players[i].calculateCallScore());
+    scores.push(players[i].calculateRaiseScore());
   }
 
   // update html with each score
@@ -136,7 +136,7 @@ const endRound = () => {
 };
 
 // function to check user click
-const handleClick = e => {
+const handleInputClick = e => {
   let player = e.target.parentElement.parentElement;
   let playerIndex = (+player.classList[1].substr(-1)) - 1;
   
@@ -182,10 +182,24 @@ const handleClick = e => {
   }
 };
 
+// function to reset player
+const handleResetClick = e => {
+  let player = e.target.parentElement.parentElement;
+  let playerIndex = (+player.classList[1].substr(-1)) - 1;
+
+  players[playerIndex].call = null;
+  players[playerIndex].raise = null;
+  players[playerIndex].callScore = 0;
+  players[playerIndex].raiseScore = 0;
+  players[playerIndex].rounds = 0;
+};
+
 // function to check click
 const checkClick = e => {
   if(e.target.classList.contains("input")) 
-    handleClick(e);
+    handleInputClick(e);
+  else if(e.target.classList.contains("reset"))
+    handleResetClick(e);
 }
 
 // event listeners
