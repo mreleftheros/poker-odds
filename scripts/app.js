@@ -89,7 +89,7 @@ const endRound = () => {
 };
 
 // function to check user click
-const updateClick = e => {
+const handleClick = e => {
   let player = e.target.parentElement.parentElement;
   let playerIndex = (+player.classList[1].substr(-1)) - 2;
   
@@ -100,7 +100,7 @@ const updateClick = e => {
       oppositeInput.classList.remove("checked");
     }
 
-    e.target.classList.toggle("checked");
+    e.target.classList.add("checked");
     players[playerIndex].call = true;
   }
   else if(e.target.classList.contains("call-ban")) {
@@ -110,7 +110,7 @@ const updateClick = e => {
       oppositeInput.classList.remove("checked");
     }
     
-    e.target.classList.toggle("checked");
+    e.target.classList.add("checked");
     players[playerIndex].call = false;
   }
   else if(e.target.classList.contains("raise-check")) {
@@ -120,7 +120,7 @@ const updateClick = e => {
       oppositeInput.classList.remove("checked");
     }
     
-    e.target.classList.toggle("checked");
+    e.target.classList.add("checked");
     players[playerIndex].raise = true;
   }
   else if(e.target.classList.contains("raise-ban")) {
@@ -130,9 +130,11 @@ const updateClick = e => {
       oppositeInput.classList.remove("checked");
     }
     
-    e.target.classList.toggle("checked");
+    e.target.classList.add("checked");
     players[playerIndex].raise = false;
   }
+
+  console.log(players[playerIndex])
 };
 
 // function to check click
