@@ -30,15 +30,19 @@ const closeWelcome = () => {
   });
 };
 
-// function to end current round
-const endRound = () => {
-  let allChecked = true;
+// function to check if all player values are not null and return true or false
+const checkAllValues = () => {
   for(let i = 0, n = players.length; i < n; i++) {
     if(players[i].call === null || players[i] === null) {
-      allChecked = false;
-      break;
+      return false;
     }
   }
+  return true;
+};
+
+// function to end current round
+const endRound = () => {
+  let allChecked = checkAllValues(); // returns true or false
 };
 
 // event listeners
